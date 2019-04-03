@@ -13,4 +13,13 @@ describe('create memory class', () => {
     const copy = memory.create(obj);
     expect(copy.name).toEqual('Superman');
   });
+
+  test('returns object based on id', () => {
+    const memory = new MemoryDatabase();
+    const obj = { name: 'Superman' };
+    const copy = memory.create(obj);
+    expect(memory.findById(copy._id)).toEqual({ ...copy });
+  });
+
+
 });
