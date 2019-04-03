@@ -49,4 +49,11 @@ describe('create memory class', () => {
     expect(memory.findByIdDelete(id)).toEqual({ ...copy });
   });
 
+  test('drop clears storage', () => {
+    const memory = new MemoryDatabase();
+    memory.create({ name: 'hungry hippo' });
+    memory.drop();
+    expect(memory.store).toEqual({});
+  });
+
 });
