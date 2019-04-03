@@ -44,7 +44,7 @@ describe('create memory class', () => {
 
   test('find object by id and delete', () => {
     const memory = new MemoryDatabase();
-    const copy = memory.create({ name: 'Superman' });
+    const copy = memory.create({ name: 'yer mom' });
     let id = copy._id;
     expect(memory.findByIdDelete(id)).toEqual({ ...copy });
   });
