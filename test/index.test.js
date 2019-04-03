@@ -21,5 +21,12 @@ describe('create memory class', () => {
     expect(memory.findById(copy._id)).toEqual({ ...copy });
   });
 
+  test('returns all objects in this.store', () => {
+    const memory = new MemoryDatabase();
+    const dog = memory.create({ name: 'Ana Dogg' });
+    const kitty = memory.create({ name: 'Fat Kitty' });
+    expect(memory.find()).toEqual([{ ...dog }, { ...kitty }]);
+  });
+
 
 });
