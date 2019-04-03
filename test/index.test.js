@@ -42,6 +42,11 @@ describe('create memory class', () => {
     expect(memory.findByIdReplace(id, { name: 'Batman' })).toEqual({ _id:expect.any(String), name: 'Batman' });
   });
 
-
+  test('find object by id and delete', () => {
+    const memory = new MemoryDatabase();
+    const copy = memory.create({ name: 'Superman' });
+    let id = copy._id;
+    expect(memory.findByIdDelete(id)).toEqual({ ...copy });
+  });
 
 });
